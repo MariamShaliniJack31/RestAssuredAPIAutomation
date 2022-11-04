@@ -4,7 +4,11 @@ pipeline {
    stages {
 		stage('Build') {
         	steps {
-            	sh 'mvn -B compile'
+			sh '''
+            		#!/bin/bash
+            		echo "hello world"
+			'mvn -B compile'
+         		'''
          	}
 		}
       
