@@ -7,7 +7,7 @@ pipeline {
 			sh '''
             		#!/bin/bash
             		echo "hello world"
-			'mvn -B compile'
+			mvn -B compile
          		'''
          	}
 		}
