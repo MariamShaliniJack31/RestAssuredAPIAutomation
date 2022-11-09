@@ -23,7 +23,7 @@ pipeline {
               		expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
             	}
 		steps {
-                	sh 'make publish'
+                	echo currentBuild.result
 		}
 	}
 }
