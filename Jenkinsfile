@@ -6,7 +6,7 @@ pipeline {
         	steps {
 			sh '''
             		#!/bin/bash
-			archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+			
             		echo "hello world"
 			mvn -B compile
          		'''
