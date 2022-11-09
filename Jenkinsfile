@@ -24,6 +24,16 @@ pipeline {
             	}
 		steps {
                 	echo currentBuild.result
+			echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+			echo env.BUILD_NUMBER
+			echo env.BUILD_TAG
+			echo env.BUILD_URL
+			echo env.EXECUTOR_NUMBER
+			echo env.JAVA_HOME
+			echo env.JENKINS_URL
+			echo env.JOB_NAME
+			echo env.NODE_NAME
+			echo env.WORKSPACE
 		}
 	}
 }
