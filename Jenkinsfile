@@ -15,7 +15,6 @@ pipeline {
 	stage('Test'){
         	steps{
             		sh 'mvn -B clean install'
-			junit '**/target/*.xml'
 		}
       	}
 }
