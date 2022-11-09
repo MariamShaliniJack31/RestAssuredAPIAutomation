@@ -26,14 +26,14 @@ pipeline {
                 	echo currentBuild.result
 			echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 			echo "BUILD_NUMBER : ${env.BUILD_NUMBER}"
-			echo env.BUILD_TAG
-			echo env.BUILD_URL
-			echo env.EXECUTOR_NUMBER
-			echo env.JAVA_HOME
-			echo env.JENKINS_URL
-			echo env.JOB_NAME
-			echo env.NODE_NAME
-			echo env.WORKSPACE
+			echo "BUILD_TAG : ${env.BUILD_TAG}"
+			echo "BUILD_URL : ${env.BUILD_URL}"
+			echo "EXECUTOR_NUMBER : ${env.EXECUTOR_NUMBER}"
+			echo "JAVA_HOME : ${env.JAVA_HOME}"
+			echo "JENKINS_URL : ${env.JENKINS_URL}"
+			echo "JOB_NAME : ${env.JOB_NAME}"
+			echo "NODE_NAME : ${env.NODE_NAME}"
+			echo "WORKSPACE : ${env.WORKSPACE}"
 		}
 	}
 }
