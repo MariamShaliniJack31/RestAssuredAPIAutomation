@@ -9,7 +9,7 @@ pipeline {
 			
             		echo "hello world"
 			mvn -B compile
-			sh 'junit "**/target/*.xml"'
+			
          		'''
          	}
 		}
