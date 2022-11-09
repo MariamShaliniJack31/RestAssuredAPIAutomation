@@ -25,7 +25,7 @@ pipeline {
 		steps {
                 	echo currentBuild.result
 			echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-			echo env.BUILD_NUMBER
+			echo "BUILD_NUMBER : " env.BUILD_NUMBER
 			echo env.BUILD_TAG
 			echo env.BUILD_URL
 			echo env.EXECUTOR_NUMBER
