@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+	agent { label "Node_Slave_Linux" }
 
    stages {
 	stage('Build') {
