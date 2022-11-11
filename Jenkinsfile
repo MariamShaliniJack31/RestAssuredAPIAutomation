@@ -18,6 +18,7 @@ pipeline {
 	                echo "Toggle: ${params.TOGGLE}"
                 	echo "Choice: ${params.CHOICE}"
 	                echo "Password: ${params.PASSWORD}"
+			echo "DEGREE: ${params.DEGREE}"
             }
         }
 	stage('Build') {
