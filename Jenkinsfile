@@ -7,6 +7,7 @@ pipeline {
 	        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 	        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 	        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+		string(name:'DEGREE', defaultValue:'Engg',description:"Write the Bachelors Degree")
     	}
    	stages {
 	   
