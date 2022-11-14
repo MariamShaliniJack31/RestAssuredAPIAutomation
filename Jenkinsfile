@@ -23,7 +23,7 @@ pipeline {
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
 			
-			echo "Hello ${EXAMPLE_CREDENTIALS}"
+			echo "Hello ${EXAMPLE_CREDENTIALS_USR}"
             }
         }
 	stage('Build') {
