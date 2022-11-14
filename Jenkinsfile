@@ -23,7 +23,10 @@ pipeline {
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
 			
+			#!bin/bash
+			'''
 			sh('curl -u $EXAMPLE_CREDENTIALS_USR:$EXAMPLE_CREDENTIALS_PSW')
+			'''
             }
         }
 	stage('Build') {
