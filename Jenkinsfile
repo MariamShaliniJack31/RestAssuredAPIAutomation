@@ -24,7 +24,7 @@ pipeline {
 			echo "DEGREE: ${params.DEGREE}"
 			
 			#!/bin/bash
-			'''
+			sh '''
 			sh('curl -u $EXAMPLE_CREDENTIALS_USR:$EXAMPLE_CREDENTIALS_PSW')
 			'''
             }
