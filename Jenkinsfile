@@ -1,5 +1,5 @@
 pipeline {
-	agent { label "Node_Slave_Linux" }
+	agent any
 	
 	environment {
 		AWS_ACCESS_KEY_ID = credentials('JenkinsAWSSecretKey')
