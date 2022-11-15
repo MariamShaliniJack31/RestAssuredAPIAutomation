@@ -2,7 +2,7 @@ pipeline {
 	agent { label "Node_Slave_Linux" }
 	
 	environment {
-		SAMPLE_CREDENTIALS = credentials('SampleCredentials')
+		AWS_ACCESS_KEY_ID = credentials('JenkinsAWSSecretKey')
 	}
 
 	parameters {
@@ -24,8 +24,7 @@ pipeline {
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
 			
-			
-			sh('curl -u $SAMPLE_CREDENTIALS_USR:$SAMPLE_CREDENTIALS_PSW https://example.com')
+			echo "Sample Credentails User : ${AWS_ACCESS_KEY_ID}"
 			
 			
             	}
