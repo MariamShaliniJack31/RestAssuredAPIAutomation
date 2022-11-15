@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	environment {
-		AWS_ACCESS_KEY_ID = credentials('JenkinsAWSSecretKey')
+		AWS_ACCESS_KEY_ID = credentials('jenkins_aws_secret_key')
 	}
 
 	parameters {
