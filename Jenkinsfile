@@ -1,5 +1,9 @@
 pipeline {
 	agent { label "Node_Slave_Linux" }
+	
+	environment {
+		SAMPLE_CREDENTIALS = credentials('SampleCredentials')
+	}
 
 	parameters {
         	string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -19,6 +23,9 @@ pipeline {
                 	echo "Choice: ${params.CHOICE}"
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
+			
+			
+			sh('curl -u $SAMPLE_CREDENTIALS_USR:$SAMPLE_CREDENTIALS_PSW https://example.com')
 			
 			
             	}
