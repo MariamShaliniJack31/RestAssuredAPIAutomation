@@ -24,7 +24,7 @@ pipeline {
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
 			
-			echo "Sample Credentails User : ${AWS_ACCESS_KEY_ID}"
+			echo  $AWS_ACCESS_KEY_ID
 			
 			
             	}
