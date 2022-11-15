@@ -25,7 +25,8 @@ pipeline {
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
 			
-			echo  "${AWS_ACCESS_KEY_ID}"
+			echo  "WS ACCESS KEY : ${AWS_ACCESS_KEY_ID}"
+			echo AWS_ACCESS_KEY_ID
 			
 			withCredentials([usernamePassword(credentialsId: 'shalini_jack', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
   // available as an env variable, but will be masked if you try to print it out any which way
