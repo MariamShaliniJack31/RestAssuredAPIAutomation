@@ -24,7 +24,7 @@ pipeline {
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
 			
-			echo  '${AWS_ACCESS_KEY_ID}'
+			echo  $AWS_ACCESS_KEY_ID
 			
 			
             	}
@@ -33,7 +33,7 @@ pipeline {
         	steps {
 			sh '''
         		#!/bin/bash
-			echo 'hello world'
+			echo "hello world"
 			mvn -B compile
 			'''
          	}
