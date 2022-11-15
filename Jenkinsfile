@@ -1,9 +1,6 @@
 pipeline {
 	agent { label "Node_Slave_Linux" }
 
-	environment{
-		EXAMPLE_CREDENTIALS = credentials('SampleCredentials')
-	}
 	parameters {
         	string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 		text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
@@ -23,11 +20,8 @@ pipeline {
 	                echo "Password: ${params.PASSWORD}"
 			echo "DEGREE: ${params.DEGREE}"
 			
-			#!/bin/bash
-			sh '''
-			sh('curl -u $EXAMPLE_CREDENTIALS_USR:$EXAMPLE_CREDENTIALS_PSW')
-			'''
-            }
+			
+            	}
         }
 	stage('Build') {
         	steps {
