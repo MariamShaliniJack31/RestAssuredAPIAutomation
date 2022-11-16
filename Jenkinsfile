@@ -43,6 +43,17 @@ pipeline {
   				// or inside double quotes for string interpolation
   				echo "username is $USERNAME"
 			}
+			
+			withCredentials([string(credentialsId: 'mytoken', variable: 'TOKEN')]) {
+    				sh /* WRONG! */ """
+      				set +x
+      				curl -H 'Token: $TOKEN' https://some.api/
+    				"""
+    				sh /* CORRECT */ '''
+      				set +x
+      				curl -H 'Token: $TOKEN' https://some.api/
+    				'''
+			}
 		}
         }
 	stage('Build') {
