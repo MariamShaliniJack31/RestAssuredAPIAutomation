@@ -47,11 +47,11 @@ pipeline {
 			withCredentials([string(credentialsId: 'mytoken', variable: 'TOKEN')]) {
     				sh /* WRONG! */ """
       				set +x
-      				curl -H 'Token: $TOKEN' 
+      				curl -H 'Token: $TOKEN' https://reqbin.com/echo
     				"""
     				sh /* CORRECT */ '''
       				set +x
-      				curl -H 'Token: $TOKEN' 
+      				curl -H 'Token: $TOKEN' https://reqbin.com/echo
     				'''
 			}
 		}
