@@ -28,19 +28,22 @@ pipeline {
 			echo  "AWS ACCESS KEY : ${AWS_ACCESS_KEY_ID}"
 			echo AWS_ACCESS_KEY_ID
 			
+			withCredentials([usernameColonPassword(credentialsId: 'userandpwdconjoined', variable: 'USRPWD')]) {
+				
+				echo USRPWD
+    			
+			}
 			withCredentials([usernamePassword(credentialsId: 'shalini_jack', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-  // available as an env variable, but will be masked if you try to print it out any which way
-  // note: single quotes prevent Groovy interpolation; expansion is by Bourne Shell, which is what you want
-  // sh 'echo $PASSWORD'
-  // also available as a Groovy variable
-  echo USERNAME
+  				// available as an env variable, but will be masked if you try to print it out any which way
+  				// note: single quotes prevent Groovy interpolation; expansion is by Bourne Shell, which is what you want
+  				// sh 'echo $PASSWORD'
+  				// also available as a Groovy variable
+  				echo USERNAME
 				echo PASSWORD
-  // or inside double quotes for string interpolation
-  echo "username is $USERNAME"
-}
-			
-			
-            	}
+  				// or inside double quotes for string interpolation
+  				echo "username is $USERNAME"
+			}
+		}
         }
 	stage('Build') {
         	steps {
