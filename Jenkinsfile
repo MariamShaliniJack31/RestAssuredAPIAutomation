@@ -1,7 +1,8 @@
 def uname = 'Jenkins'
 
 pipeline {
-	agent any
+	//agent any
+	agent { label "Node_Slave_Linux" }
 	environment {
 		AWS_ACCESS_KEY_ID = credentials('jenkins_aws_secret_key')
 	}
