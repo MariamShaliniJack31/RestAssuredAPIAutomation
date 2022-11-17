@@ -98,10 +98,10 @@ pipeline {
 	}
 	post {
 		success {
-            		mail to: mariamshalini@gmail.com, subject: 'The Pipeline Passes :)'
+            		echo 'The Pipeline Passes :)'
         	}
         	failure {
-            		mail to: mariamshalini@gmail.com, subject: 'The Pipeline failed :('
+            		echo 'The Pipeline failed :('
         	}
     	}
 }
