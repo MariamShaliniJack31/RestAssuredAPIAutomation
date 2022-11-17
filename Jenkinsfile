@@ -99,8 +99,5 @@ pipeline {
         	success {
             		mail to: mariamshalini@gmail.com, subject: 'The Pipeline Passed :)'
         	}
-        	failure {
-            		mail to: mariamshalini@gmail.com, subject: 'The Pipeline failed :('
-        	}
-    	}	
+        }	
 }
