@@ -1,6 +1,6 @@
 pipeline {
 	agent any
-	
+	def uname = 'Jenkins'
 	environment {
 		AWS_ACCESS_KEY_ID = credentials('jenkins_aws_secret_key')
 	}
@@ -19,7 +19,7 @@ pipeline {
            	steps {
 			
 			//String Interpolation
-			def uname = 'Jenkins'
+			
 			echo 'Hello Mr. ${uname}'
 			echo "I said, Hello Mr. ${uname}"
 			
