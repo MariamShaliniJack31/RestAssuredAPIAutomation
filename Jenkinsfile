@@ -96,4 +96,12 @@ pipeline {
 			}
 		}
 	}
+	post {
+		success {
+            		mail to: mariamshalini@gmail.com, subject: 'The Pipeline Passes :)'
+        	}
+        	failure {
+            		mail to: mariamshalini@gmail.com, subject: 'The Pipeline failed :('
+        	}
+    	}
 }
