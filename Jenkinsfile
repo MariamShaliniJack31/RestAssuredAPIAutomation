@@ -17,6 +17,12 @@ pipeline {
 	   
 	   stage('Example') {
            	steps {
+			
+			//String Interpolation - Only the latter string will support the dollar-sign ($) based string interpolation, for example:
+			def uname = 'Jenkins'
+			echo 'Hello Mr. ${uname}'
+			echo "I said, Hello Mr. ${uname}
+			
                 	echo "Hello ${params.PERSON}"
 	                echo "Biography: ${params.BIOGRAPHY}"
 	                echo "Toggle: ${params.TOGGLE}"
