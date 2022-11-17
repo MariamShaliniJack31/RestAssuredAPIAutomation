@@ -3,7 +3,6 @@ pipeline {
 	
 	environment {
 		AWS_ACCESS_KEY_ID = credentials('jenkins_aws_secret_key')
-		
 	}
 
 	parameters {
@@ -29,10 +28,9 @@ pipeline {
 			echo AWS_ACCESS_KEY_ID
 			
 			withCredentials([usernameColonPassword(credentialsId: 'userandpwdconjoined', variable: 'USRPWD')]) {
-				
 				echo USRPWD
-    			
-			}
+    			}
+			
 			withCredentials([usernamePassword(credentialsId: 'shalini_jack', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
   				// available as an env variable, but will be masked if you try to print it out any which way
   				// note: single quotes prevent Groovy interpolation; expansion is by Bourne Shell, which is what you want
@@ -54,6 +52,11 @@ pipeline {
       				curl -H 'Token: $TOKEN' https://reqbin.com/echo
     				'''
 			}
+			
+			//String Interpolation - Only the latter string will support the dollar-sign ($) based string interpolation, for example:
+			def username = 'Jenkins'
+			echo 'Hello Mr. ${username}'
+			echo "I said, Hello Mr. ${username}"
 		}
         }
 	stage('Build') {
