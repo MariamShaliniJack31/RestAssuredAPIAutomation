@@ -1,6 +1,7 @@
+def uname = 'Jenkins'
+
 pipeline {
 	agent any
-	def uname = 'Jenkins'
 	environment {
 		AWS_ACCESS_KEY_ID = credentials('jenkins_aws_secret_key')
 	}
