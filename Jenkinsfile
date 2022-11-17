@@ -93,14 +93,14 @@ pipeline {
 			echo "WORKSPACE : ${env.WORKSPACE}"
 		}
 	}
-		
+}
+	
 	post {
         	success {
-            		mail to: mariamshalini@gmail.com, subject: 'The Pipeline Passed'
+            		mail to: mariamshalini@gmail.com, subject: 'The Pipeline Passed :)'
         	}
         	failure {
             		mail to: mariamshalini@gmail.com, subject: 'The Pipeline failed :('
         	}
     	}	
-}
 }
