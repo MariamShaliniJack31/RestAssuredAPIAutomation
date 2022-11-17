@@ -54,7 +54,7 @@ pipeline {
 			}
 			
 			//String Interpolation - Only the latter string will support the dollar-sign ($) based string interpolation, for example:
-			def username = 'Jenkins'
+			//def username = 'Jenkins'
 			echo 'Hello Mr. ${username}'
 			echo "I said, Hello Mr. ${username}"
 		}
