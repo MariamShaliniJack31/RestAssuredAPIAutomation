@@ -95,9 +95,5 @@ pipeline {
 	}
 }
 	
-	post {
-        	success {
-            		echo 'The Pipeline Passed :)'
-        	}
-        }	
+	
 }
