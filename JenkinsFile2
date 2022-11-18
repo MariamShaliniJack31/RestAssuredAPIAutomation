@@ -2,11 +2,10 @@ pipeline {
 	agent any
 
    	stages {
-		
 		stage('Build') {
-        	steps {
+        		steps {
 				sh '''
-        		#!/bin/bash
+        			#!/bin/bash
 				echo "hello world"
 				mvn -B compile
 				'''
@@ -14,10 +13,9 @@ pipeline {
 		}
       	
 		stage('Test'){
-    		steps{
-        		sh 'mvn -B clean install'
+    			steps{
+        			sh 'mvn -B clean install'
 			}
+      		}
       	}
-      	
-	}
 }
