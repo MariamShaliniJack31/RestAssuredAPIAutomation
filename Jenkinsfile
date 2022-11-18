@@ -7,6 +7,9 @@ pipeline {
 		AWS_ACCESS_KEY_ID = credentials('jenkins_aws_secret_key')
 	}
 
+	triggers {
+  		cron 'H 1 * * *'
+	}
 	parameters {
         	string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 		text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
