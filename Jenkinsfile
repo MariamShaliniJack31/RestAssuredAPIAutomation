@@ -1,8 +1,11 @@
 def uname = 'Jenkins'
+def mbranch = 'Multibranch Pipeline'
 
 pipeline {
+	
 	//agent any
 	agent { label "Node_Slave_Linux" }
+	
 	environment {
 		AWS_ACCESS_KEY_ID = credentials('jenkins_aws_secret_key')
 	}
@@ -10,24 +13,31 @@ pipeline {
 	triggers {
   		cron 'H 1 * * *'
 	}
+	
 	parameters {
         	string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-		text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+			text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
 	        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 	        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 	        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-		string(name: "DEGREE", defaultValue: "Engg",description: "Write the Bachelors Degree")
-    	}
+			string(name: "DEGREE", defaultValue: "Engg",description: "Write the Bachelors Degree")
+    }
+   	
    	stages {
 	   
 		stage('Example') {
 			steps {
 			
+				echo "I said, Hello Mr. ${mbranch}"
+				
+				echo "I said, Hello Mr. ${mbranch}"
+				echo "I said, Hello Mr. ${mbranch}"
+				
 				echo "Hello ${params.PERSON}"
-	                	echo "Biography: ${params.BIOGRAPHY}"
-	                	echo "Toggle: ${params.TOGGLE}"
-                		echo "Choice: ${params.CHOICE}"
-	                	echo "Password: ${params.PASSWORD}"
+	           	echo "Biography: ${params.BIOGRAPHY}"
+	            echo "Toggle: ${params.TOGGLE}"
+                echo "Choice: ${params.CHOICE}"
+	            echo "Password: ${params.PASSWORD}"
 				echo "DEGREE: ${params.DEGREE}"
 			
 				echo  "AWS ACCESS KEY : ${AWS_ACCESS_KEY_ID}"
@@ -35,7 +45,7 @@ pipeline {
 			
 				withCredentials([usernameColonPassword(credentialsId: 'userandpwdconjoined', variable: 'USRPWD')]) {
 					echo USRPWD
-    				}
+    			}
 			
 				withCredentials([usernamePassword(credentialsId: 'shalini_jack', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
   					// available as an env variable, but will be masked if you try to print it out any which way
@@ -64,7 +74,7 @@ pipeline {
 				echo 'Hello Mr. ${uname}'
 				echo "I said, Hello Mr. ${uname}"
 			}
-        	}
+        }
 		stage('Build') {
         		steps {
 				sh '''
@@ -79,14 +89,14 @@ pipeline {
         		steps{
             			sh 'mvn -B clean install'
 			}
-      		}
+      	}
 	   
 		stage('Deploy') {
 			when {
               			expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            		}
+            }
 			steps {
-                		echo currentBuild.result
+            	echo currentBuild.result
 				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 				echo "BUILD_NUMBER : ${env.BUILD_NUMBER}"
 				echo "BUILD_TAG : ${env.BUILD_TAG}"
@@ -102,10 +112,10 @@ pipeline {
 	}
 	post {
 		success {
-            		echo 'The Pipeline Passes :)'
-        	}
-        	failure {
-            		echo 'The Pipeline failed :('
-        	}
-    	}
+            echo 'The Pipeline Passes :)'
+        }
+        failure {
+        	echo 'The Pipeline failed :('
+        }
+    }
 }
