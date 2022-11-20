@@ -30,6 +30,9 @@ pipeline {
 			
 				echo "I said, Hello Mr. ${mbranch}"
 				
+				echo "I said, Hello Mr. ${mbranch}"
+				echo "I said, Hello Mr. ${mbranch}"
+				
 				echo "Hello ${params.PERSON}"
 	           	echo "Biography: ${params.BIOGRAPHY}"
 	            echo "Toggle: ${params.TOGGLE}"
