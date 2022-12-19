@@ -6,7 +6,7 @@ pipeline {
    	stages {
 		stage('Build') {
         		steps {
-				helloWorldSimple("Shalini","Monday")
+				
 				sh '''
         			#!/bin/bash
 				
