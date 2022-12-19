@@ -11,7 +11,7 @@ pipeline {
 				echo "hello world"
 				mvn -B compile
 				'''
-				vars.helloWorldSimple("Shalini", "Monday")
+				helloWorldSimple("Shalini", "Monday")
 			}
 		}
       	
