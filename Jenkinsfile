@@ -6,10 +6,10 @@ pipeline {
    	stages {
 		stage('Build') {
         		steps {
-				
+				vars.helloWorldSimple('Shalini', 'Monday')
 				sh '''
         			#!/bin/bash
-				vars.helloWorldSimple('Shalini', 'Monday')
+				
 				echo "hello world"
 				mvn -B compile
 				'''
