@@ -1,3 +1,5 @@
+@Library('shared-library')
+
 pipeline {
 	agent any
 
@@ -9,6 +11,7 @@ pipeline {
 				echo "hello world"
 				mvn -B compile
 				'''
+				vars.helloWorldSimple("Shalini", "Monday")
 			}
 		}
       	
