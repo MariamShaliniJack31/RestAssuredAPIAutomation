@@ -6,14 +6,14 @@ pipeline {
 		stage('Build') {
         		steps {
 				echo "hello world"
-				mvn -B compile
+				bat 'mvn -B compile'
 				
 			}
 		}
       	
 		stage('Test'){
     			steps {
-        			mvn -B clean install
+        			bat 'mvn -B clean install'
 			}
       		}
       	}
