@@ -6,7 +6,7 @@ pipeline {
    	stages {
 		stage('Build') {
         		steps {
-				vars.helloWorldSimple.call("Shalini", "Monday")
+				helloWorldSimple("Shalini","Monday")
 				sh '''
         			#!/bin/bash
 				
