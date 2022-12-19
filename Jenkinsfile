@@ -5,19 +5,15 @@ pipeline {
    	stages {
 		stage('Build') {
         		steps {
-				sh '''
-        			#!/bin/bash
-				
 				echo "hello world"
 				mvn -B compile
-				'''
 				
 			}
 		}
       	
 		stage('Test'){
     			steps{
-        			sh 'mvn -B clean install'
+        			mvn -B clean install
 			}
       		}
       	}
