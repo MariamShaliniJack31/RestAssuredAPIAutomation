@@ -1,12 +1,12 @@
 @Library('shared-library') _
 pipeline {
 	agent any
-
+	vars.evenOdd()
    	stages {
 		stage('Build') {
         		steps {
 				helloWorldSimple("Shalini", "Monday")
-				vars.evenOdd()
+				evenOdd()
 				echo "hello world"
 				bat 'mvn -B compile'
 				
