@@ -6,12 +6,14 @@ pipeline {
    	stages {
 		stage('Build') {
         		steps {
+				
 				sh '''
         			#!/bin/bash
+				helloWorldSimple("Shalini", "Monday")
 				echo "hello world"
 				mvn -B compile
 				'''
-				helloWorldSimple("Shalini", "Monday")
+				
 			}
 		}
       	
