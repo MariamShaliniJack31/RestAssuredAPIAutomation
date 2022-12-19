@@ -1,7 +1,7 @@
 @Library('shared-library') _
 pipeline {
 	agent any
-	vars.evenOdd()
+	
    	stages {
 		stage('Build') {
         		steps {
