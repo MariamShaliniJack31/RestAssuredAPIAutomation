@@ -5,6 +5,7 @@ pipeline {
    	stages {
 		stage('Build') {
         		steps {
+				helloWorldSimple("Shalini", "Monday")
 				echo "hello world"
 				bat 'mvn -B compile'
 				
