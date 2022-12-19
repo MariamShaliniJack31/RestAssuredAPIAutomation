@@ -9,7 +9,7 @@ pipeline {
 				
 				sh '''
         			#!/bin/bash
-				helloWorldSimple("Shalini", "Monday")
+				vars.helloWorldSimple('Shalini', 'Monday')
 				echo "hello world"
 				mvn -B compile
 				'''
