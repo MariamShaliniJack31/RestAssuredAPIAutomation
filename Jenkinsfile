@@ -5,7 +5,7 @@ pipeline {
    	stages {
 		stage('Build') {
         		steps {
-				helloWorldSimple.calling '"Shalini","Monday"'
+				helloWorldSimple("Shalini","Monday")
 				evenOdd()
 				echo "hello world"
 				bat 'mvn -B compile'
