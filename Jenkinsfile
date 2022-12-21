@@ -6,7 +6,7 @@ pipeline {
 		stage('Build') {
         		steps {
 				helloWorldSimple("Shalini","Monday")
-				helloWorldSimple(name:"Shalini",dayOfWeek:"Monday")
+				
 				
 				evenOdd()
 				echo "hello world"
